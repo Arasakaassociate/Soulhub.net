@@ -6,11 +6,8 @@ import CreateCompanionButton from "@/components/CreateCompanionButton";
 export default async function DashboardPage() {
     const supabase = createClient();
 
-    // Check Auth
+    // Check Auth (optional - for personalized features)
     const { data: { user } } = await supabase.auth.getUser();
-    if (!user) {
-        redirect("/login");
-    }
 
     // Mock Data Implementation (Premium "Pepsi" Tier)
     const getMockCompanions = () => [
@@ -71,7 +68,7 @@ export default async function DashboardPage() {
             <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <h1 className="text-3xl font-bold text-white">Explore AI Characters</h1>
                 <div className="flex items-center gap-4">
-                    <CreateCompanionButton />
+                    {user && <CreateCompanionButton />}
                     {/* Filter Chips Placeholder */}
                     <div className="hidden md:flex gap-2">
                         {['All', 'Realistic', 'Anime', 'Roleplay'].map((filter) => (
@@ -83,7 +80,7 @@ export default async function DashboardPage() {
                 </div>
             </div>
 
-            <DashboardGrid companions={companions || []} />
+            <DashboardGrid companions={companions || []} isAuthenticated={!!user} />
         </div>
     );
 }
