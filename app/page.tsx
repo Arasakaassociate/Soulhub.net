@@ -45,10 +45,12 @@ export default function HomePage() {
       <nav className="border-b border-[#333] bg-pepsi-surface/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <h1 className="bg-gradient-to-r from-pepsi-blue to-white bg-clip-text text-2xl font-black text-transparent italic">
-              SoulHub
-            </h1>
-            <div className="flex items-center gap-3">
+            <Link href="/">
+              <h1 className="bg-gradient-to-r from-pepsi-blue to-white bg-clip-text text-2xl font-black text-transparent italic cursor-pointer">
+                SoulHub
+              </h1>
+            </Link>
+            <div className="flex items-center gap-2">
               <Link
                 href="/login"
                 className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
@@ -57,7 +59,7 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/login"
-                className="px-6 py-2 rounded-xl bg-pepsi-blue text-white text-sm font-bold shadow-[0_0_20px_rgba(0,112,255,0.3)] hover:bg-[#005ccc] hover:shadow-[0_0_25px_rgba(0,112,255,0.5)] transition-all"
+                className="px-5 py-2 rounded-xl bg-pepsi-blue text-white text-sm font-bold shadow-[0_0_20px_rgba(0,112,255,0.3)] hover:bg-[#005ccc] hover:shadow-[0_0_25px_rgba(0,112,255,0.5)] transition-all"
               >
                 Get Started
               </Link>
