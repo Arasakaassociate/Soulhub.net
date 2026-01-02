@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
             });
         }
 
-    } catch (error: any) {
+    } catch (error) {
         console.error("Generate API Error:", error);
         return NextResponse.json({ error: error.message }, { status: 500 });
     }

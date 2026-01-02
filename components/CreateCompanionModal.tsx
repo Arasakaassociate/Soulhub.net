@@ -181,7 +181,7 @@ export default function CreateCompanionModal({ isOpen, onClose }: CreateCompanio
                                                 <div className="text-center p-6">
                                                     <User className="h-16 w-16 text-gray-700 mx-auto mb-4" />
                                                     <p className="text-gray-500 text-sm">
-                                                        Enter a description and click "Generate Appearance" to visualize your companion.
+                                                        Enter a description and click &quot;Generate Appearance&quot; to visualize your companion.
                                                     </p>
                                                 </div>
                                             )}

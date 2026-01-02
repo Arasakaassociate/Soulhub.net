@@ -3,6 +3,7 @@
 import { createClient } from '@/utils/supabase/server'
 import { revalidatePath } from 'next/cache'
 
+// @ts-ignore
 export async function createCompanion(prevState: any, formData: FormData) {
     const supabase = createClient()
 
@@ -33,6 +34,7 @@ export async function createCompanion(prevState: any, formData: FormData) {
         revalidatePath('/dashboard')
         return { message: 'success' }
     } catch (e) {
+        // console.error(e)
         return { message: 'Unexpected error' }
     }
 }

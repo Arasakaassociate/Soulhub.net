@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/utils/supabase/server';
-import { openrouter, pinecone, indexName } from '@/lib/clients';
+import { openrouter } from '@/lib/clients';
 
 // export const runtime = 'edge'; // Pinecone SDK requires Node.js runtime (node:stream)
 
@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json({ response: aiResponse });
 
-    } catch (error: any) {
+    } catch (error) {
         console.error("Chat API Error:", error);
         return NextResponse.json({
             response: "I'm having trouble connecting to my consciousness right now. (Mock Fallback)"

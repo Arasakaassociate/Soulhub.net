@@ -49,7 +49,6 @@ export default async function DashboardPage() {
     ];
 
     let companions = [];
-    let fetchError = null;
 
     try {
         const { data, error } = await supabase
@@ -60,7 +59,6 @@ export default async function DashboardPage() {
         companions = data || [];
     } catch (e) {
         console.error("Database connection failed or empty, using mock data:", e);
-        fetchError = e;
     }
 
     // Fallback if DB is empty or failed
