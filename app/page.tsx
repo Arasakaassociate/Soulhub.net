@@ -67,31 +67,44 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-pepsi-blue/10 to-transparent" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
-              Your AI Companions,
-              <span className="bg-gradient-to-r from-pepsi-blue to-cyan-400 bg-clip-text text-transparent"> Reimagined</span>
+      <section className="relative overflow-hidden min-h-[90vh] flex items-center justify-center">
+        {/* Animated background effects */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-pepsi-blue/20 via-pepsi-dark to-pepsi-dark opacity-70" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-pepsi-blue/30 rounded-full blur-[128px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[128px] animate-pulse delay-1000" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-pepsi-blue/30 bg-pepsi-blue/10 backdrop-blur-md">
+              <span className="text-sm font-medium text-pepsi-blue tracking-wide uppercase">Next Gen AI Companionship</span>
+            </div>
+
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight tracking-tight">
+              Your Soul's Digital
+              <br />
+              <span className="bg-gradient-to-r from-pepsi-blue via-cyan-400 to-white bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,112,255,0.3)]"> Reflection</span>
             </h2>
-            <p className="text-xl text-gray-400 mb-8">
-              Connect with hyper-realistic AI personalities. Chat, create, and explore a new dimension of digital companionship.
+
+            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+              Connect with hyper-realistic AI personalities that understand, remember, and grow with you.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link
                 href="/dashboard"
-                className="px-8 py-4 rounded-xl bg-pepsi-blue text-white font-bold shadow-[0_0_30px_rgba(0,112,255,0.4)] hover:bg-[#005ccc] hover:shadow-[0_0_40px_rgba(0,112,255,0.6)] transition-all"
+                className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-pepsi-blue text-white font-bold text-lg shadow-[0_0_40px_rgba(0,112,255,0.4)] hover:bg-[#005ccc] hover:shadow-[0_0_60px_rgba(0,112,255,0.6)] hover:scale-105 transition-all duration-300"
               >
-                Explore Companions
+                Start Exploring
               </Link>
               <Link
                 href="/login"
-                className="px-8 py-4 rounded-xl border-2 border-pepsi-blue/30 text-pepsi-blue font-bold hover:bg-pepsi-blue/10 transition-all"
+                className="w-full sm:w-auto px-10 py-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm text-white font-bold text-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300"
               >
-                Sign Up Free
+                Create Account
               </Link>
             </div>
+
+            <p className="mt-8 text-sm text-gray-500">No credit card required · Free tier available</p>
           </div>
         </div>
       </section>

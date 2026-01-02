@@ -10,6 +10,8 @@ import {
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
+import MobileNav from "@/components/MobileNav";
+
 export default async function DashboardLayout({
     children,
 }: {
@@ -27,7 +29,7 @@ export default async function DashboardLayout({
 
     return (
         <div className="flex min-h-screen bg-pepsi-dark text-white">
-            {/* Sidebar */}
+            {/* Sidebar (Desktop) */}
             <aside className="fixed left-0 top-0 h-screen w-64 border-r border-[#333] bg-pepsi-surface p-4 hidden md:flex md:flex-col">
                 <div className="mb-8 px-4 py-2">
                     <Link href="/">
@@ -62,8 +64,11 @@ export default async function DashboardLayout({
                 </div>
             </aside>
 
+            {/* Mobile Nav (Bottom) */}
+            <MobileNav isAuthenticated={!!user} />
+
             {/* Main Content */}
-            <main className="flex-1 md:ml-64">
+            <main className="flex-1 md:ml-64 mb-16 md:mb-0">
                 {children}
             </main>
         </div>
