@@ -1,6 +1,5 @@
 import DashboardGrid from "@/components/DashboardGrid";
 import { createClient } from "@/utils/supabase/server";
-import { redirect } from "next/navigation";
 import CreateCompanionButton from "@/components/CreateCompanionButton";
 
 export default async function DashboardPage() {
