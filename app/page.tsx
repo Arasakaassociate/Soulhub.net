@@ -80,7 +80,7 @@ export default function HomePage() {
             </div>
 
             <h2 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight tracking-tight">
-              Your Soul's Digital
+              Your Soul&apos;s Digital
               <br />
               <span className="bg-gradient-to-r from-pepsi-blue via-cyan-400 to-white bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,112,255,0.3)]"> Reflection</span>
             </h2>
