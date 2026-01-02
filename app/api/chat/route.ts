@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/utils/supabase/server';
 import { openrouter, pinecone, indexName } from '@/lib/clients';
 
-export const runtime = 'edge';
+// export const runtime = 'edge'; // Pinecone SDK requires Node.js runtime (node:stream)
 
 export async function POST(req: NextRequest) {
     try {
