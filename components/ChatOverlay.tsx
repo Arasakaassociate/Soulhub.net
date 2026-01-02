@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { X, Send, Image as ImageIcon, Loader2 } from "lucide-react";
+import Image from "next/image";
 
 interface ChatProps {
     companion: {
@@ -85,7 +86,7 @@ const ChatOverlay = ({ companion, onClose }: ChatProps) => {
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-white/10 p-4 bg-pepsi-dark">
                     <div className="flex items-center gap-3">
-                        <img src={companion.imageUrl} alt={companion.name} className="h-10 w-10 rounded-full object-cover" />
+                        <Image src={companion.imageUrl} alt={companion.name} width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
                         <div>
                             <h3 className="font-bold text-white">{companion.name}</h3>
                             <p className="text-xs text-green-400 flex items-center gap-1">
@@ -112,7 +113,7 @@ const ChatOverlay = ({ companion, onClose }: ChatProps) => {
                                 : 'bg-[#252525] text-gray-100 rounded-bl-sm border border-white/5'
                                 }`}>
                                 {m.content.startsWith('![') ? (
-                                    <img src={m.content.match(/\((.*?)\)/)?.[1]} alt="Generated" className="rounded-lg max-w-full" />
+                                    <Image src={m.content.match(/\((.*?)\)/)?.[1] || ''} alt="Generated" width={500} height={500} className="rounded-lg max-w-full h-auto" />
                                 ) : (
                                     <p className="whitespace-pre-wrap text-sm">{m.content}</p>
                                 )}

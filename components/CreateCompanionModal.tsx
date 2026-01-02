@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { X, Sparkles, User, FileText, Loader2 } from "lucide-react";
+import Image from "next/image";
 import { createCompanion } from "@/app/dashboard/actions";
 // Note: We'll need to wrap the server action to use it easily in client or use useFormState, 
 // but for simplicity calling it directly or wrapping in a handler here changes slightly depending on Next.js version.
@@ -167,10 +168,11 @@ export default function CreateCompanionModal({ isOpen, onClose }: CreateCompanio
                                         <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl bg-[#151515] border-2 border-dashed border-gray-700 flex items-center justify-center group">
                                             {generatedImage ? (
                                                 <>
-                                                    <img
+                                                    <Image
                                                         src={generatedImage}
                                                         alt="Generated Preview"
-                                                        className="h-full w-full object-cover"
+                                                        fill
+                                                        className="object-cover"
                                                     />
                                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                                                     <div className="absolute bottom-4 left-4">
