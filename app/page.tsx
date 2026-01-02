@@ -70,43 +70,55 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-[90vh] flex items-center justify-center">
-        {/* Animated background effects */}
+        {/* Enhanced Animated background effects */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-pepsi-blue/20 via-pepsi-dark to-pepsi-dark opacity-70" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-pepsi-blue/30 rounded-full blur-[128px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[128px] animate-pulse delay-1000" />
+
+        {/* Multiple animated orbs for depth */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-pepsi-blue/40 rounded-full blur-[128px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/30 rounded-full blur-[128px] animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-purple-500/20 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-pepsi-blue/30 bg-pepsi-blue/10 backdrop-blur-md">
+            {/* Badge with animation */}
+            <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-pepsi-blue/30 bg-pepsi-blue/10 backdrop-blur-md animate-fade-in">
               <span className="text-sm font-medium text-pepsi-blue tracking-wide uppercase">Next Gen AI Companionship</span>
             </div>
 
-            <h2 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight tracking-tight">
+            {/* Enhanced heading with glow */}
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight tracking-tight animate-slide-up">
               Your Soul&apos;s Digital
               <br />
-              <span className="bg-gradient-to-r from-pepsi-blue via-cyan-400 to-white bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,112,255,0.3)]"> Reflection</span>
+              <span className="bg-gradient-to-r from-pepsi-blue via-cyan-400 to-white bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(0,112,255,0.5)] animate-glow">
+                Reflection
+              </span>
             </h2>
 
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            {/* Enhanced description */}
+            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Connect with hyper-realistic AI personalities that understand, remember, and grow with you.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            {/* Enhanced buttons with better hover effects */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <Link
                 href="/dashboard"
-                className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-pepsi-blue text-white font-bold text-lg shadow-[0_0_40px_rgba(0,112,255,0.4)] hover:bg-[#005ccc] hover:shadow-[0_0_60px_rgba(0,112,255,0.6)] hover:scale-105 transition-all duration-300"
+                className="group w-full sm:w-auto px-10 py-5 rounded-2xl bg-gradient-to-r from-pepsi-blue to-cyan-500 text-white font-bold text-lg shadow-[0_0_40px_rgba(0,112,255,0.4)] hover:shadow-[0_0_60px_rgba(0,112,255,0.7)] hover:scale-105 transition-all duration-300 relative overflow-hidden"
               >
-                Start Exploring
+                <span className="relative z-10">Start Exploring</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-pepsi-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
               <Link
                 href="/login"
-                className="w-full sm:w-auto px-10 py-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm text-white font-bold text-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                className="group w-full sm:w-auto px-10 py-5 rounded-2xl border-2 border-white/20 bg-white/5 backdrop-blur-sm text-white font-bold text-lg hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300"
               >
                 Create Account
               </Link>
             </div>
 
-            <p className="mt-8 text-sm text-gray-500">No credit card required · Free tier available</p>
+            <p className="mt-8 text-sm text-gray-500 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              No credit card required · Free tier available
+            </p>
           </div>
         </div>
       </section>
