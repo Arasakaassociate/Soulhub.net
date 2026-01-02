@@ -42,12 +42,20 @@ alter table companions enable row level security;
 alter table messages enable row level security;
 
 -- Policies
+-- 1. Profiles: Publicly viewable by anyone (needed for message display)
 create policy "Public profiles are viewable by everyone." on profiles for select using ( true );
+-- 2. Profiles: Users can only create their OWN profile (id matches auth.uid)
 create policy "Users can insert their own profile." on profiles for insert with check ( auth.uid() = id );
+-- 3. Profiles: Users can only update their OWN profile
 create policy "Users can update own profile." on profiles for update using ( auth.uid() = id );
 
+-- 4. Companions: Publicly viewable
 create policy "Companions are viewable by everyone." on companions for select using ( true );
+-- 5. Companions: Only authenticated users can create companions
 create policy "Users can insert companions." on companions for insert with check ( auth.role() = 'authenticated' );
 
+-- 6. Messages: Users can only see messages they are part of (sent or received? Current logic only checks user_id)
+-- Note: This assumes 'user_id' is the owner. If you want to check receiving, you might need more complex logic.
 create policy "Users can view their own messages." on messages for select using ( auth.uid() = user_id );
+-- 7. Messages: Users can only insert messages as themselves
 create policy "Users can insert their own messages." on messages for insert with check ( auth.uid() = user_id );
