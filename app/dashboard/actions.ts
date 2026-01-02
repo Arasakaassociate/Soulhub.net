@@ -3,7 +3,6 @@
 import { createClient } from '@/utils/supabase/server'
 import { revalidatePath } from 'next/cache'
 
-// @ts-expect-error - prevState type requirement
 export async function createCompanion(prevState: unknown, formData: FormData) {
     const supabase = createClient()
 
