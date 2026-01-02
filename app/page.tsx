@@ -45,9 +45,21 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="border-b border-[#333] bg-pepsi-surface/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Left: Buttons */}
-            <div className="flex items-center gap-2">
+          <div className="flex justify-between items-center h-16 relative">
+            {/* Left: Logo */}
+            <Link href="/">
+              <h1 className="bg-gradient-to-r from-pink-400 via-rose-400 to-red-400 bg-clip-text text-2xl font-black text-transparent italic cursor-pointer">
+                SoulHub
+              </h1>
+            </Link>
+
+            {/* Center: Rotating Text (Desktop only) */}
+            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2">
+              <RotatingText />
+            </div>
+
+            {/* Right: Buttons */}
+            <div className="flex items-center gap-3">
               <Link
                 href="/login"
                 className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
@@ -61,18 +73,6 @@ export default function HomePage() {
                 Get Started
               </Link>
             </div>
-
-            {/* Center: Rotating Text */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
-              <RotatingText />
-            </div>
-
-            {/* Right: Logo */}
-            <Link href="/">
-              <h1 className="bg-gradient-to-r from-pink-400 via-rose-400 to-red-400 bg-clip-text text-2xl font-black text-transparent italic cursor-pointer">
-                SoulHub
-              </h1>
-            </Link>
           </div>
         </div>
       </nav>

@@ -13,7 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         pepsi: {
           dark: "#121212",    // Deep Charcoal Background
-          blue: "#0070FF",    // Electric Blue Accent
+          blue: "#ec4899",    // Pink 500 for romantic theme (was Electric Blue)
           surface: "#1A1A1A", // Lighter Charcoal for cards/sidebar
           light: "#E1E1E1",   // Text Color
         }

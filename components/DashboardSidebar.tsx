@@ -47,11 +47,11 @@ export default function DashboardSidebar({ isAuthenticated }: DashboardSidebarPr
             <div className="mb-8 px-2 py-2 overflow-hidden">
                 <Link href="/">
                     {isExpanded ? (
-                        <h1 className="bg-gradient-to-r from-pepsi-blue to-white bg-clip-text text-2xl font-black text-transparent italic whitespace-nowrap">
+                        <h1 className="bg-gradient-to-r from-pink-400 via-rose-400 to-red-400 bg-clip-text text-2xl font-black text-transparent italic whitespace-nowrap">
                             SoulHub
                         </h1>
                     ) : (
-                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-pepsi-blue font-bold text-white shadow-[0_0_15px_rgba(0,112,255,0.5)]">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 font-bold text-white shadow-[0_0_15px_rgba(236,72,153,0.5)]">
                             S
                         </div>
                     )}
